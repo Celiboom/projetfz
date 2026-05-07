@@ -43,6 +43,8 @@ Sources officielles a verifier regulierement:
 4. Ajouter Google Search Console et Bing Webmaster Tools apres publication.
 5. Si tu fais du SEM, commencer avec un budget test faible et des mots-cles exacts.
 
+Les liens de conversion vers Fizz doivent toujours inclure le parametre `?referral=TON-CODE`. Le site le fait automatiquement dans `script.js` a partir de `REFERRAL_CODE`.
+
 ## Notes importantes
 
 Le site doit eviter de laisser croire qu'il est un site officiel Fizz. Les annonces, titres SEO et pages doivent rester transparents: `site independant`, `code de reference`, `prime de parrainage`, pas `coupon officiel` si ce n'est pas fourni officiellement par Fizz.

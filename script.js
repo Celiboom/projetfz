@@ -1,5 +1,8 @@
 const REFERRAL_CODE = "REMPLACE-MOI";
-const FIZZ_URL = "https://fizz.ca/fr/inviter-des-amis";
+const FIZZ_BASE_URL = "https://fizz.ca/fr/inviter-des-amis";
+const fizzUrl = new URL(FIZZ_BASE_URL);
+
+fizzUrl.searchParams.set("referral", REFERRAL_CODE);
 
 const codeElements = document.querySelectorAll("[data-referral-code]");
 const copyButton = document.querySelector("[data-copy-code]");
@@ -10,7 +13,7 @@ codeElements.forEach((element) => {
 });
 
 fizzLinks.forEach((link) => {
-  link.href = FIZZ_URL;
+  link.href = fizzUrl.toString();
   link.addEventListener("click", () => {
     window.localStorage.setItem("projetfz_last_click", new Date().toISOString());
   });
