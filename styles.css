@@ -9,7 +9,6 @@
   --lime: #c8e86d;
   --blue: #1d5c82;
   --coral: #e8694a;
-  --gold: #f2c14e;
   --shadow: 0 24px 60px rgba(23, 32, 31, 0.12);
 }
 
@@ -323,54 +322,6 @@ button,
   border-top: 1px solid rgba(223, 229, 222, 0.8);
 }
 
-.compact-section {
-  padding-top: clamp(34px, 5vw, 58px);
-  padding-bottom: clamp(34px, 5vw, 58px);
-}
-
-.acquisition-strip {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(22px, 5vw, 64px);
-  align-items: center;
-  background: #17201f;
-  color: #f8fff4;
-}
-
-.acquisition-strip p {
-  color: #d7e6dd;
-}
-
-.metric {
-  display: inline-grid;
-  gap: 2px;
-  padding: 18px 20px;
-  color: #17201f;
-  background: var(--gold);
-  border-radius: 8px;
-}
-
-.metric strong {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  line-height: 1;
-}
-
-.metric span {
-  font-weight: 900;
-}
-
-.source-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.source-links a {
-  color: #d6f084;
-  font-weight: 800;
-}
-
 .split-section {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
@@ -581,8 +532,7 @@ details p {
   .hero,
   .split-section,
   .value-grid,
-  .choice-grid,
-  .acquisition-strip {
+  .choice-grid {
     grid-template-columns: 1fr;
   }
 

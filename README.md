@@ -7,7 +7,7 @@ Le site est conçu pour fonctionner sans serveur: il suffit d'héberger les fich
 ## Objectif
 
 - Obtenir environ 1 conversion Fizz par jour.
-- Faire connaître un code de référence Fizz avec un coût d'acquisition bas.
+- Faire connaître un code de référence Fizz avec une visibilité efficace.
 - Capter des recherches intentionnelles comme `code référence fizz`, `code promo fizz`, `forfait mobile fizz québec`, `internet fizz avis`, `économiser fizz`.
 - Rester transparent: le site doit dire clairement que le propriétaire reçoit une prime si le code est utilisé.
 - Offrir une expérience en français, anglais et espagnol.
@@ -57,7 +57,7 @@ La langue peut être forcée à partir de la racine avec le paramètre `culture`
 
 Si `culture` est absent, le site utilise la langue du navigateur quand elle est disponible. Les variantes comme `en-CA`, `fr-FR`, `es-MX` et `es-US` sont aussi acceptées.
 
-Le site vise un coût d'acquisition cible de 2,50$. Les boutons Mobile et Internet produisent des événements distincts: `click_mobile`, `click_internet`, et le bouton de copie produit `copy_code`.
+Les boutons Mobile et Internet produisent des événements distincts: `click_mobile`, `click_internet`, et le bouton de copie produit `copy_code`.
 
 ## Notes importantes
 
