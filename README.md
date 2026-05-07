@@ -26,9 +26,12 @@ Sources officielles à vérifier régulièrement:
 
 ## Fichiers
 
-- `index.html`: landing page SEO prête à publier.
+- `index.html`: page racine qui redirige vers `/fr/`, `/en/` ou `/es/`.
+- `fr/index.html`: landing page française.
+- `en/index.html`: landing page anglaise.
+- `es/index.html`: landing page espagnole.
 - `styles.css`: mise en page responsive.
-- `script.js`: textes trilingues, copie du code, liens sortants et suivi d'événements local.
+- `script.js`: code de référence, liens sortants et suivi d'événements local.
 - `robots.txt`: directives pour les moteurs de recherche.
 - `sitemap.xml`: sitemap à mettre à jour avec le vrai domaine.
 - `github-pages.md`: marche à suivre pour publier sur GitHub Pages.
@@ -38,21 +41,23 @@ Sources officielles à vérifier régulièrement:
 
 ## Configuration rapide
 
-1. Remplacer tous les `InsérerCodeICI` par ton vrai code de référence Fizz.
-2. Remplacer `https://example.com/` dans `index.html`, `robots.txt` et `sitemap.xml` par le futur domaine.
+1. Remplacer tous les `InsérerCodeICI` par ton vrai code de référence Fizz, surtout dans `script.js`, `fr/index.html`, `en/index.html` et `es/index.html`.
+2. Vérifier que les URL `https://celiboom.github.io/projetfz/fr/`, `/en/` et `/es/` correspondent bien au repo GitHub Pages publié.
 3. Publier le dossier tel quel sur un hébergeur statique.
-4. Ajouter Google Search Console et Bing Webmaster Tools apres publication.
+4. Ajouter Google Search Console et Bing Webmaster Tools après publication.
 5. Si tu fais du SEM, commencer avec un budget test faible et des mots-clés exacts.
 
 Les liens de conversion vers Fizz doivent toujours inclure le paramètre `?referral=TON-CODE`. Le site le fait automatiquement dans `script.js` à partir de `REFERRAL_CODE`.
 
-La langue peut être forcée avec le paramètre `culture` dans l'URL:
+La langue peut être forcée à partir de la racine avec le paramètre `culture` dans l'URL:
 
-- `?culture=fr-CA` pour le français.
-- `?culture=en-US` pour l'anglais.
-- `?culture=es-ES` pour l'espagnol.
+- `?culture=fr-CA` redirige vers `/fr/`.
+- `?culture=en-US` redirige vers `/en/`.
+- `?culture=es-ES` redirige vers `/es/`.
 
 Si `culture` est absent, le site utilise la langue du navigateur quand elle est disponible. Les variantes comme `en-CA`, `fr-FR`, `es-MX` et `es-US` sont aussi acceptées.
+
+Le site vise un coût d'acquisition cible de 2,50$. Les boutons Mobile et Internet produisent des événements distincts: `click_mobile`, `click_internet`, et le bouton de copie produit `copy_code`.
 
 ## Notes importantes
 

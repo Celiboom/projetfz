@@ -6,8 +6,8 @@ Ce projet est prêt pour GitHub Pages avec GitHub Actions. Le workflow publie se
 
 Remplacer:
 
-- `InsérerCodeICI` dans `index.html` et `script.js` par ton vrai code Fizz.
-- `https://example.com/` dans `index.html`, `robots.txt` et `sitemap.xml` par l'URL GitHub Pages ou ton futur domaine.
+- `InsérerCodeICI` dans `script.js`, `fr/index.html`, `en/index.html` et `es/index.html` par ton vrai code Fizz.
+- `https://celiboom.github.io/projetfz/` dans `index.html`, `robots.txt`, `sitemap.xml` et les pages localisées si ton repo GitHub Pages utilise une autre URL ou un domaine personnalisé.
 
 Si tu n'as pas encore de domaine personnalisé, l'URL GitHub Pages ressemblera à:
 
@@ -18,7 +18,7 @@ https://TON-USAGER.github.io/NOM-DU-REPO/
 ## 2. Créer le dépôt GitHub
 
 1. Aller sur GitHub.
-2. Creer un nouveau repository, par exemple `projetfz`.
+2. Créer un nouveau repository, par exemple `projetfz`.
 3. Le laisser public si tu veux utiliser GitHub Pages gratuitement sans friction.
 4. Ne pas ajouter de README depuis GitHub si tu vas pousser ce dossier local.
 
@@ -52,14 +52,14 @@ Dans le dépôt GitHub:
 
 Selon la documentation GitHub, la publication peut prendre quelques minutes après un push.
 
-## 5. Apres publication
+## 5. Après publication
 
-- Mettre l'URL finale dans `index.html`, `robots.txt` et `sitemap.xml`.
-- Ajouter le site a Google Search Console.
-- Ajouter le site a Bing Webmaster Tools.
+- Vérifier que l'URL finale dans `index.html`, `robots.txt`, `sitemap.xml` et les pages `/fr/`, `/en/`, `/es/` correspond au repo publié.
+- Ajouter le site à Google Search Console.
+- Ajouter le site à Bing Webmaster Tools.
 - Vérifier que le bouton copie bien ton code Fizz.
 - Tester le clic vers Fizz sur mobile.
-- Tester les URL de langue: `?culture=fr-CA`, `?culture=en-US` et `?culture=es-ES`.
+- Tester les URL de langue: `/fr/`, `/en/`, `/es/`, `?culture=fr-CA`, `?culture=en-US` et `?culture=es-ES`.
 
 ## Source officielle
 
