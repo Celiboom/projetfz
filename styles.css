@@ -49,7 +49,9 @@ a {
 }
 
 .brand,
-.nav {
+.nav,
+.header-actions,
+.language-switcher {
   display: flex;
   align-items: center;
 }
@@ -78,6 +80,10 @@ a {
   font-size: 0.95rem;
 }
 
+.header-actions {
+  gap: 18px;
+}
+
 .nav a {
   text-decoration: none;
 }
@@ -87,6 +93,30 @@ a {
   color: #fff;
   background: var(--green);
   border-radius: 8px;
+}
+
+.language-switcher {
+  gap: 4px;
+  padding: 4px;
+  background: #edf5e8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.language-button {
+  min-height: 34px;
+  padding: 7px 10px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.language-button.is-active {
+  color: #fff;
+  background: var(--green);
 }
 
 .hero {
@@ -358,6 +388,16 @@ details p {
     justify-content: space-between;
     gap: 10px;
     font-size: 0.86rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .language-switcher {
+    width: max-content;
   }
 
   .hero,
