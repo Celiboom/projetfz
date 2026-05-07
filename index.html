@@ -3,96 +3,186 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ProjetFZ | Redirection</title>
-    <meta name="description" content="ProjetFZ vous redirige vers la version localisée du site.">
-    <link rel="canonical" href="https://celiboom.github.io/projetfz/fr/">
-    <link rel="alternate" hreflang="fr-CA" href="https://celiboom.github.io/projetfz/fr/">
-    <link rel="alternate" hreflang="en-US" href="https://celiboom.github.io/projetfz/en/">
-    <link rel="alternate" hreflang="es-ES" href="https://celiboom.github.io/projetfz/es/">
-    <link rel="alternate" hreflang="x-default" href="https://celiboom.github.io/projetfz/fr/">
-    <meta http-equiv="refresh" content="2; url=fr/">
-    <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #fbfaf6;
-        color: #17201f;
-        font-family: "Aptos", "Segoe UI", sans-serif;
-      }
-
-      main {
-        max-width: 560px;
-        padding: 32px;
-      }
-
-      a {
-        color: #195733;
-        font-weight: 800;
-      }
-    </style>
-    <script>
-      const cultureMap = {
-        fr: "fr",
-        "fr-ca": "fr",
-        "fr-fr": "fr",
-        en: "en",
-        "en-ca": "en",
-        "en-us": "en",
-        "en-gb": "en",
-        es: "es",
-        "es-ca": "es",
-        "es-es": "es",
-        "es-mx": "es",
-        "es-us": "es"
-      };
-
-      function normalizeCulture(culture) {
-        if (!culture) {
-          return "";
-        }
-
-        const normalized = String(culture).trim().toLowerCase().replace(/_/g, "-");
-        const language = normalized.slice(0, 2);
-        return cultureMap[normalized] || cultureMap[language] || "";
-      }
-
-      function chooseLanguage() {
-        const requestedCulture = new URLSearchParams(window.location.search).get("culture");
-        const requestedLanguage = normalizeCulture(requestedCulture);
-
-        if (requestedLanguage) {
-          return requestedLanguage;
-        }
-
-        const browserCultures = navigator.languages && navigator.languages.length
-          ? navigator.languages
-          : [navigator.language];
-
-        for (let index = 0; index < browserCultures.length; index += 1) {
-          const browserLanguage = normalizeCulture(browserCultures[index]);
-
-          if (browserLanguage) {
-            return browserLanguage;
-          }
-        }
-
-        return "fr";
-      }
-
-      window.location.replace(`${chooseLanguage()}/`);
-    </script>
+    <title>ProjetLD | Répertoire de catégories de leads</title>
+    <meta
+      name="description"
+      content="ProjetLD regroupe des catégories de génération de leads locales. Le premier domaine actif est le déneigement résidentiel avec estimation automatisée."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main>
-      <h1>ProjetFZ</h1>
-      <p>Redirection vers la bonne langue...</p>
-      <p>
-        <a href="fr/">Français</a> |
-        <a href="en/">English</a> |
-        <a href="es/">Español</a>
-      </p>
-    </main>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark">LD</span>
+          <span class="brand-copy">
+            <strong>ProjetLD</strong>
+            <span>Catégories de leads locaux</span>
+          </span>
+        </a>
+
+        <nav class="top-nav" aria-label="Navigation principale">
+          <a href="#categories">Catégories</a>
+          <a href="#approche">Approche</a>
+          <a href="#livraison">Déploiement</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero directory-hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Plateforme multi-domaines</p>
+            <h1>Un site racine qui dirige vers chaque type de lead.</h1>
+            <p class="hero-text">
+              ProjetLD sert de homepage centrale pour plusieurs catégories de services. La première
+              catégorie active est le déneigement résidentiel avec une estimation automatisée à partir
+              de l'adresse, de la façade et de la vue satellite.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#categories">Voir les catégories</a>
+              <a class="secondary-button" href="deneigement/">Ouvrir déneigement</a>
+            </div>
+
+            <ul class="hero-points">
+              <li>Une homepage qui référence les domaines disponibles</li>
+              <li>Une page dédiée par catégorie de service</li>
+              <li>Une expérience d’estimation et de capture adaptée à chaque domaine</li>
+            </ul>
+          </div>
+
+          <aside class="hero-card directory-card">
+            <p class="card-label">Lancement initial</p>
+            <h2 class="directory-card-title">Déneigement</h2>
+            <p class="hero-card-copy">
+              Adresse civique, vue façade, vue satellite, mesure du stationnement, prix final et formulaire de lead.
+            </p>
+
+            <div class="tag-row">
+              <span class="pill">Actif</span>
+              <span class="pill">Résidentiel</span>
+              <span class="pill">Instantané</span>
+            </div>
+
+            <a class="primary-button full-width" href="deneigement/">Accéder à la catégorie</a>
+          </aside>
+        </section>
+
+        <section class="directory-section" id="categories">
+          <div class="section-heading">
+            <p class="eyebrow">Catégories</p>
+            <h2>Les domaines référencés par la homepage</h2>
+          </div>
+
+          <div class="category-grid">
+            <article class="panel category-card is-featured">
+              <div class="panel-head">
+                <div>
+                  <p class="card-label">Catégorie 01</p>
+                  <h3>Déneigement résidentiel</h3>
+                </div>
+                <span class="pill accent-pill">En ligne</span>
+              </div>
+
+              <p class="category-copy">
+                L’utilisateur entre son adresse, valide la propriété avec Google Maps, trace le stationnement
+                sur la vue satellite, reçoit un prix final automatiquement, puis soumet sa demande.
+              </p>
+
+              <ul class="check-list">
+                <li>Adresse civique</li>
+                <li>Façade Google Maps</li>
+                <li>Vue aérienne satellite</li>
+                <li>Calcul automatisé et prix final</li>
+              </ul>
+
+              <a class="primary-button" href="deneigement/">Voir la catégorie déneigement</a>
+            </article>
+
+            <article class="panel category-card coming-soon-card">
+              <div class="panel-head">
+                <div>
+                  <p class="card-label">Expansion</p>
+                  <h3>Autres catégories à venir</h3>
+                </div>
+                <span class="pill">Bientôt</span>
+              </div>
+
+              <p class="category-copy">
+                La structure du site est maintenant prête pour ajouter d’autres domaines sans mélanger
+                les expériences. Chaque nouveau secteur pourra avoir sa propre page, sa logique métier
+                et son formulaire de conversion.
+              </p>
+
+              <div class="coming-soon-list">
+                <span>Architecture déjà prévue</span>
+                <span>Navigation centralisée</span>
+                <span>Catégories indépendantes</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="directory-section" id="approche">
+          <div class="section-heading">
+            <p class="eyebrow">Approche</p>
+            <h2>Une base simple pour faire grandir le catalogue</h2>
+          </div>
+
+          <div class="delivery-grid">
+            <article class="panel">
+              <h3>Homepage</h3>
+              <ul class="check-list">
+                <li>Présente les catégories disponibles</li>
+                <li>Guide l’utilisateur vers le bon service</li>
+                <li>Peut évoluer sans casser les pages existantes</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Pages catégorie</h3>
+              <ul class="check-list">
+                <li>Une logique métier propre à chaque domaine</li>
+                <li>Un parcours de conversion dédié</li>
+                <li>Des intégrations ou formulaires spécifiques au besoin</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="delivery-section" id="livraison">
+          <div class="section-heading">
+            <p class="eyebrow">Déploiement</p>
+            <h2>Prêt pour GitHub Pages dans un repo dédié</h2>
+          </div>
+
+          <div class="delivery-grid">
+            <article class="panel">
+              <h3>Ce que contient déjà ProjetLD</h3>
+              <ul class="check-list">
+                <li>Une homepage racine</li>
+                <li>Une catégorie déneigement autonome</li>
+                <li>Une base statique HTML/CSS/JS facile à publier</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Étape suivante</h3>
+              <ul class="check-list">
+                <li>Publier ce projet dans son propre repo GitHub</li>
+                <li>Configurer Google Maps pour la catégorie déneigement</li>
+                <li>Ajouter les prochaines catégories quand tu es prêt</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

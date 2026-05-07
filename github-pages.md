@@ -1,66 +1,50 @@
-# Publication sur GitHub Pages
+# Publication GitHub Pages
 
-Ce projet est prêt pour GitHub Pages avec GitHub Actions. Le workflow publie seulement le dossier `ProjetFZ`, même si le dépôt local contient d'autres fichiers.
+## Recommandation
 
-## 1. Avant de publier
+Publie `ProjetLD` dans un repo GitHub dédié. Cela évite les conflits avec les autres sites du dépôt actuel et respecte la limite d'un seul site GitHub Pages par repo.
 
-Remplacer:
+## Option recommandée: repo dédié
 
-- `InsérerCodeICI` dans `script.js`, `fr/index.html`, `en/index.html` et `es/index.html` par ton vrai code Fizz.
-- `https://celiboom.github.io/projetfz/` dans `index.html`, `robots.txt`, `sitemap.xml` et les pages localisées si ton repo GitHub Pages utilise une autre URL ou un domaine personnalisé.
+1. Crée un nouveau dépôt GitHub, par exemple `ProjetLD`.
+2. Copie le contenu de `ProjetLD/` à la racine de ce nouveau dépôt.
+3. Pousse les fichiers sur la branche `main` ou `master`.
+4. Dans GitHub, ouvre `Settings > Pages`.
+5. Choisis la source de publication:
+   - soit `Deploy from a branch`
+   - soit `GitHub Actions`
+6. Si tu publies directement les fichiers statiques, sélectionne la branche et le dossier racine.
+7. Attends la génération du site et visite l'URL GitHub Pages.
 
-Si tu n'as pas encore de domaine personnalisé, l'URL GitHub Pages ressemblera à:
+## Clé Google Maps
 
-```text
-https://TON-USAGER.github.io/NOM-DU-REPO/
-```
+Une fois l'URL GitHub Pages connue, restreins la clé API Google Maps à ce domaine:
 
-## 2. Créer le dépôt GitHub
+- `https://<compte>.github.io/*` pour un site utilisateur
+- `https://<compte>.github.io/<repo>/*` pour un site projet
 
-1. Aller sur GitHub.
-2. Créer un nouveau repository, par exemple `projetfz`.
-3. Le laisser public si tu veux utiliser GitHub Pages gratuitement sans friction.
-4. Ne pas ajouter de README depuis GitHub si tu vas pousser ce dossier local.
+Si tu testes aussi en local avec un petit serveur HTTP, ajoute au besoin:
 
-## 3. Connecter le dépôt local
+- `http://localhost/*`
 
-Depuis `C:\Users\yrichard\Documents\New project`, exécuter:
+## Endpoint de lead
 
-```powershell
-git add ProjetFZ .github/workflows/deploy-projetfz-pages.yml
-git commit -m "Add ProjetFZ GitHub Pages site"
-git remote add origin https://github.com/TON-USAGER/projetfz.git
-git push -u origin master
-```
+Comme GitHub Pages héberge seulement des fichiers statiques, la réception des leads doit passer par un service externe:
 
-Si GitHub crée le dépôt avec la branche `main`, utiliser plutôt:
+- webhook maison
+- Formspree
+- Make
+- Zapier
+- Google Apps Script
 
-```powershell
-git branch -M main
-git push -u origin main
-```
+Le site est déjà prêt à envoyer du JSON ou du `application/x-www-form-urlencoded` selon `leadWebhookFormat`.
 
-## 4. Activer GitHub Pages
+## Si tu veux absolument publier depuis ce dépôt actuel
 
-Dans le dépôt GitHub:
+Ce n'est pas recommandé tant que d'autres sites GitHub Pages vivent dans le même repo. Il faudrait alors:
 
-1. Aller dans Settings.
-2. Aller dans Pages.
-3. Dans Build and deployment, choisir Source: `GitHub Actions`.
-4. Aller dans Actions et vérifier que `Deploy ProjetFZ to GitHub Pages` se termine correctement.
-5. Revenir dans Settings > Pages pour cliquer sur `Visit site`.
+1. Choisir quel site doit réellement être publié par le repo.
+2. Remplacer ou désactiver le workflow/pages existant.
+3. Pointer la publication vers `ProjetLD` au lieu de l'autre projet.
 
-Selon la documentation GitHub, la publication peut prendre quelques minutes après un push.
-
-## 5. Après publication
-
-- Vérifier que l'URL finale dans `index.html`, `robots.txt`, `sitemap.xml` et les pages `/fr/`, `/en/`, `/es/` correspond au repo publié.
-- Ajouter le site à Google Search Console.
-- Ajouter le site à Bing Webmaster Tools.
-- Vérifier que le bouton copie bien ton code Fizz.
-- Tester le clic vers Fizz sur mobile.
-- Tester les URL de langue: `/fr/`, `/en/`, `/es/`, `?culture=fr-CA`, `?culture=en-US` et `?culture=es-ES`.
-
-## Source officielle
-
-- GitHub Docs: https://docs.github.com/fr/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+Cette approche ferait entrer `ProjetLD` en conflit avec l'autre site déjà présent.

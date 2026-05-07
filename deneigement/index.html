@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjetLD | Catégorie Déneigement</title>
+    <meta
+      name="description"
+      content="Catégorie déneigement de ProjetLD: estimation automatisée à partir de l'adresse, de la façade Google Maps et de la vue satellite du stationnement."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../config.js"></script>
+    <script defer src="../app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="../">
+          <span class="brand-mark">LD</span>
+          <span class="brand-copy">
+            <strong data-company-name>ProjetLD</strong>
+            <span>Catégorie déneigement</span>
+          </span>
+        </a>
+
+        <nav class="top-nav" aria-label="Navigation principale">
+          <a href="../">Accueil</a>
+          <a href="#estimateur">Estimateur</a>
+          <a href="#capture">Lead</a>
+          <a href="#livraison">Déploiement</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero service-hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Catégorie active · Déneigement résidentiel</p>
+            <h1>Une estimation qui se bâtit autour de la propriété du client.</h1>
+            <p class="hero-text">
+              L'utilisateur entre son adresse civique, voit la façade de la maison, confirme la vue
+              satellite et obtient automatiquement un prix final après la mesure du stationnement.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#estimateur">Lancer une estimation</a>
+              <a class="secondary-button" href="../">Retour à l’accueil</a>
+            </div>
+
+            <ul class="hero-points">
+              <li>Adresse civique validée avec Google Maps</li>
+              <li>Façade et vue aérienne de la propriété</li>
+              <li>Prix final affiché automatiquement au consommateur</li>
+            </ul>
+          </div>
+
+          <aside class="hero-card service-card">
+            <p class="card-label">Expérience client</p>
+            <h2 class="directory-card-title">Simple et immédiat</h2>
+            <p class="hero-card-copy">
+              La logique de calcul reste en arrière-plan. L’utilisateur voit seulement la propriété,
+              la mesure et le prix final avant de demander le service.
+            </p>
+
+            <div class="tag-row">
+              <span class="pill">Façade</span>
+              <span class="pill">Satellite</span>
+              <span class="pill">Lead capturé</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="estimator-section" id="estimateur">
+          <div class="section-heading">
+            <p class="eyebrow">Estimateur</p>
+            <h2>Adresse, vues Google Maps, superficie et prix final</h2>
+          </div>
+
+          <div class="estimator-grid">
+            <article class="panel estimator-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="card-label">Étape 1</p>
+                  <h3>Trouver la propriété</h3>
+                </div>
+                <span class="pill">Catégorie active</span>
+              </div>
+
+              <form id="address-form" class="address-form" novalidate>
+                <label class="field">
+                  <span>Adresse civique</span>
+                  <input
+                    id="address-input"
+                    name="address"
+                    type="text"
+                    placeholder="Ex. 1234 rue Principale, Laval, QC"
+                    autocomplete="street-address"
+                    required
+                  >
+                </label>
+
+                <button id="lookup-button" class="primary-button" type="submit">
+                  Analyser l'adresse
+                </button>
+              </form>
+
+              <p id="global-status" class="status-banner" aria-live="polite">
+                Ajoutez d'abord votre clé Google Maps dans <code>config.js</code>.
+              </p>
+
+              <div class="mini-grid">
+                <div class="metric-card">
+                  <span class="metric-label">Adresse analysée</span>
+                  <strong id="quote-address" class="metric-value metric-address">Aucune adresse analysée</strong>
+                  <span class="metric-detail">La propriété reconnue s'affichera ici.</span>
+                </div>
+
+                <div class="metric-card">
+                  <span class="metric-label">Superficie</span>
+                  <strong id="area-value" class="metric-value">--</strong>
+                  <span id="area-detail" class="metric-detail">Tracez le contour du stationnement pour calculer la surface.</span>
+                </div>
+
+                <div class="metric-card accent-card">
+                  <span class="metric-label">Prix final</span>
+                  <strong id="price-value" class="metric-value">--</strong>
+                  <span id="price-detail" class="metric-detail">Le prix apparaîtra automatiquement après la mesure.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel process-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="card-label">Mode d'emploi</p>
+                  <h3>Comment l'estimation se construit</h3>
+                </div>
+              </div>
+
+              <ol class="process-list">
+                <li>Entrez l'adresse civique et chargez la propriété.</li>
+                <li>Vérifiez la façade dans Street View et la vue satellite.</li>
+                <li>Cliquez sur <strong>Tracer le stationnement</strong>.</li>
+                <li>Cliquez autour du stationnement sur la vue aérienne.</li>
+                <li>Ajustez les poignées du contour pour affiner la surface.</li>
+                <li>Le prix final s'affiche automatiquement, puis le formulaire de lead apparaît.</li>
+              </ol>
+
+              <p class="helper-copy">
+                Cette version s'appuie sur une mesure directe de la zone sur l'image satellite pour rester
+                simple, visuelle et fiable sur un site statique.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="results-section" class="results-section" hidden>
+          <div class="maps-grid">
+            <article class="panel map-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="card-label">Façade</p>
+                  <h3>Vue Street View</h3>
+                </div>
+              </div>
+
+              <div class="map-shell">
+                <div id="street-view" class="map-frame" aria-label="Vue façade"></div>
+                <div id="street-view-empty" class="map-empty">
+                  La façade Google Maps sera affichée ici si Street View est disponible.
+                </div>
+              </div>
+            </article>
+
+            <article class="panel map-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="card-label">Aérien</p>
+                  <h3>Vue satellite et contour du stationnement</h3>
+                </div>
+              </div>
+
+              <div class="toolbar">
+                <button id="start-drawing" class="secondary-button" type="button">Tracer le stationnement</button>
+                <button id="finish-drawing" class="ghost-button" type="button" disabled>Terminer le tracé</button>
+                <button id="reset-polygon" class="ghost-button" type="button" disabled>Réinitialiser</button>
+              </div>
+
+              <div class="map-shell">
+                <div id="aerial-map" class="map-frame" aria-label="Vue satellite"></div>
+                <div id="aerial-map-empty" class="map-empty">
+                  La vue satellite se chargera ici après la recherche d'adresse.
+                </div>
+              </div>
+
+              <p class="map-caption">
+                Astuce: commencez par les coins principaux du stationnement, puis ajustez les poignées bleues pour être précis.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="capture-section" id="capture">
+          <div class="section-heading">
+            <p class="eyebrow">Conversion</p>
+            <h2>Capture du lead après affichage du prix</h2>
+          </div>
+
+          <article id="lead-section" class="panel lead-panel" hidden>
+            <div class="panel-head">
+              <div>
+                <p class="card-label">Étape 2</p>
+                <h3>Demander le service</h3>
+              </div>
+              <span class="pill accent-pill">Prix prêt</span>
+            </div>
+
+            <p class="lead-summary">
+              <strong id="lead-summary-price">--</strong>
+              pour
+              <span id="lead-summary-area">--</span>
+              à
+              <span id="lead-summary-address">cette adresse</span>.
+            </p>
+
+            <form id="lead-form" class="lead-form" novalidate>
+              <div class="lead-grid">
+                <label class="field">
+                  <span>Prénom</span>
+                  <input id="first-name" name="firstName" type="text" autocomplete="given-name" required>
+                </label>
+
+                <label class="field">
+                  <span>Nom</span>
+                  <input id="last-name" name="lastName" type="text" autocomplete="family-name" required>
+                </label>
+
+                <label class="field">
+                  <span>Téléphone</span>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+                </label>
+
+                <label class="field">
+                  <span>Courriel</span>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                </label>
+              </div>
+
+              <input id="lead-address-hidden" name="quotedAddress" type="hidden">
+              <input id="lead-area-hidden" name="areaSqFt" type="hidden">
+              <input id="lead-price-hidden" name="quoteCad" type="hidden">
+
+              <button id="submit-lead" class="primary-button full-width" type="submit">
+                Soumettre ma demande
+              </button>
+
+              <p class="helper-copy">
+                Si <code>leadWebhookUrl</code> n'est pas configuré, le formulaire reste en mode démo et enregistre le lead localement dans le navigateur.
+              </p>
+              <p id="lead-status" class="status-banner" aria-live="polite"></p>
+            </form>
+          </article>
+        </section>
+
+        <section class="delivery-section" id="livraison">
+          <div class="section-heading">
+            <p class="eyebrow">Livraison</p>
+            <h2>Prêt pour GitHub et pour les prochaines catégories</h2>
+          </div>
+
+          <div class="delivery-grid">
+            <article class="panel">
+              <h3>Ce qui est inclus</h3>
+              <ul class="check-list">
+                <li>Site statique HTML/CSS/JS sans backend obligatoire</li>
+                <li>Intégration Google Maps côté client</li>
+                <li>Calcul de surface avec la librairie Geometry</li>
+                <li>Formulaire de lead configurable via webhook</li>
+                <li>Structure prête pour d'autres catégories</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Étapes de mise en ligne</h3>
+              <ul class="check-list">
+                <li>Créer une clé Google Maps restreinte au domaine GitHub Pages</li>
+                <li>Activer la facturation Google Maps Platform</li>
+                <li>Configurer <code>config.js</code> et un endpoint de leads</li>
+                <li>Publier <code>ProjetLD</code> dans un repo GitHub dédié</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
