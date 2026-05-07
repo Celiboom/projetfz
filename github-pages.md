@@ -59,6 +59,7 @@ Selon la documentation GitHub, la publication peut prendre quelques minutes apr√
 - Ajouter le site a Bing Webmaster Tools.
 - V√©rifier que le bouton copie bien ton code Fizz.
 - Tester le clic vers Fizz sur mobile.
+- Tester les URL de langue: `?culture=fr-CA`, `?culture=en-US` et `?culture=es-ES`.
 
 ## Source officielle
 

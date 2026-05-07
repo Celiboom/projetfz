@@ -46,6 +46,14 @@ Sources officielles à vérifier régulièrement:
 
 Les liens de conversion vers Fizz doivent toujours inclure le paramètre `?referral=TON-CODE`. Le site le fait automatiquement dans `script.js` à partir de `REFERRAL_CODE`.
 
+La langue peut être forcée avec le paramètre `culture` dans l'URL:
+
+- `?culture=fr-CA` pour le français.
+- `?culture=en-US` pour l'anglais.
+- `?culture=es-ES` pour l'espagnol.
+
+Si `culture` est absent, le site utilise la langue du navigateur quand elle est disponible. Les variantes comme `en-CA`, `fr-FR`, `es-MX` et `es-US` sont aussi acceptées.
+
 ## Notes importantes
 
 Le site doit éviter de laisser croire qu'il est un site officiel Fizz. Les annonces, titres SEO et pages doivent rester transparents: `site indépendant`, `code de référence`, `prime de parrainage`, pas `coupon officiel` si ce n'est pas fourni officiellement par Fizz.
