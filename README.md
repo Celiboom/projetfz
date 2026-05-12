@@ -47,7 +47,7 @@ Sources officielles à vérifier régulièrement:
 4. Ajouter Google Search Console et Bing Webmaster Tools après publication.
 5. Si tu fais du SEM, commencer avec un budget test faible et des mots-clés exacts.
 
-Les liens de conversion vers Fizz doivent toujours inclure le paramètre `?referral=OYYKR`. Le site le fait automatiquement dans `script.js` à partir de `REFERRAL_CODE`.
+Les liens de conversion vers Fizz doivent toujours inclure le paramètre `?ref=OYYKR`. Le site le fait automatiquement dans `script.js` à partir de `REFERRAL_CODE`.
 
 La langue peut être forcée à partir de la racine avec le paramètre `culture` dans l'URL:
 

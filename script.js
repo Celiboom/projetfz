@@ -6,7 +6,8 @@ const fizzLinks = document.querySelectorAll("[data-fizz-link]");
 
 function buildFizzUrl(baseUrl) {
   const url = new URL(baseUrl);
-  url.searchParams.set("referral", REFERRAL_CODE);
+  url.searchParams.delete("referral");
+  url.searchParams.set("ref", REFERRAL_CODE);
   return url.toString();
 }
 
