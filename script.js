@@ -1,4 +1,4 @@
-const REFERRAL_CODE = "InsérerCodeICI";
+const REFERRAL_CODE = "OYYKR";
 
 const codeElements = document.querySelectorAll("[data-referral-code]");
 const copyButtons = document.querySelectorAll("[data-copy-code]");
