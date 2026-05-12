@@ -11,6 +11,13 @@ function buildFizzUrl(baseUrl) {
 }
 
 function trackEvent(eventName, details = {}) {
+  const analyticsDetails = {
+    referral_code: REFERRAL_CODE,
+    page_path: window.location.pathname,
+    page_language: document.documentElement.lang,
+    ...details
+  };
+
   const payload = {
     event: eventName,
     referralCode: REFERRAL_CODE,
@@ -23,9 +30,17 @@ function trackEvent(eventName, details = {}) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(payload);
 
-  const previousEvents = JSON.parse(window.localStorage.getItem("projetfz_events") || "[]");
-  previousEvents.push(payload);
-  window.localStorage.setItem("projetfz_events", JSON.stringify(previousEvents.slice(-50)));
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, analyticsDetails);
+  }
+
+  try {
+    const previousEvents = JSON.parse(window.localStorage.getItem("projetfz_events") || "[]");
+    previousEvents.push(payload);
+    window.localStorage.setItem("projetfz_events", JSON.stringify(previousEvents.slice(-50)));
+  } catch (error) {
+    console.warn("ProjetFZ tracking storage unavailable.", error);
+  }
 }
 
 codeElements.forEach((element) => {
